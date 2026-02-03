@@ -1,0 +1,49 @@
+.pagination_container {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+.page_container {
+  display: flex;
+}
+
+.pagination_control_btn {
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.page_btn {
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  font-weight: bolder;
+  color: black;
+  background-color: white;
+}
+
+.current_page {
+  background-color: gray;
+  color: white;
+}
+
+.page_btn,
+.pagination_control_btn {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.1s ease;
+}
+.page_btn:hover:not(:disabled) {
+  background-color: #eaeaea;
+  cursor: pointer;
+}
+.page_btn:active {
+  transform: scale(0.95);
+}

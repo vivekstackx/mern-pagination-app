@@ -1,0 +1,20 @@
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.main_container {
+  border: 0.5rem ridge black;
+  width: 70%;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgb(157, 163, 163);
+  color: black;
+}
+.copyright_notice {
+  text-align: center;
+  font-size: 13px;
+  color: black;
+  margin-top: 10px;
+  margin-top: 2rem;
+}
