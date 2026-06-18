@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- *  QUICK ARCHITECTURE NOTES: PAGINATION UNDER THE HOOD (Hinglish Guide)
+ *  QUICK ARCHITECTURE NOTES: PAGINATION UNDER THE HOOD :)
  * ============================================================================
  * 
  * 1. OFFSET-BASED PAGINATION (Jo is project me implement kiya hai)
