@@ -1,0 +1,43 @@
+/**
+ * ============================================================================
+ *  QUICK ARCHITECTURE NOTES: PAGINATION UNDER THE HOOD (Hinglish Guide)
+ * ============================================================================
+ * 
+ * 1. OFFSET-BASED PAGINATION (Jo is project me implement kiya hai)
+ * ----------------------------------------------------------------------------
+ *   Core Logic: 
+ *    - Jo code humne `(page - 1) * userlimit` aur `.skip().limit()` likha hai, 
+ *      usi ko computer science me "Offset-based Pagination" bolte hain.
+ * 
+ *   Meaning of Offset: 
+ *    - Offset ka seedha matlab hai: "Database me starting se kitne records skip (chhodne) hain."
+ * 
+ *   How it works: 
+ *    - Jaise hum Google par niche [1] [2] [3] page numbers dekhte hain. Jab koi 
+ *      Page 3 par click karta hai, toh backend purane records ko formula se calculate 
+ *      karke skip kar deta hai aur agla fresh batch fetch karta hai.
+ * 
+ *   Best Use Case: 
+ *    - Jahan fixed data ho aur dashboard par traditional numeric navigation chahiye ho.
+ * 
+ * ----------------------------------------------------------------------------
+ * 
+ * 2. CURSOR-BASED PAGINATION (Jo badi modern companies use karti hain)
+ * ----------------------------------------------------------------------------
+ *   Real-Life Example: 
+ *    - Instagram, Facebook ya Twitter par jab hum scroll karte hain aur niche naya data 
+ *      apne aap aata jata hai (Infinite Scroll), use "Cursor-based Pagination" bolte hain.
+ * 
+ *   How it works: 
+ *    - Isme `page` ya `skip` ka chakkar nahi hota. Database har batch ke sath ek 
+ *      "Unique Pointer" ya "ID" bhejta hai (jise Cursor kehte hain). 
+ *    - Frontend jab agla request bhejta hai toh kehta hai: "Bhai, is specific ID ke 
+ *      baad wale agle N posts fetch karke de do."
+ * 
+ *   Why it is required: 
+ *    - Agar data har second badal raha ho (jaise live tweets ya posts), toh Offset-based 
+ *      system me duplicate data dikhne lagta hai. Cursor-based system direct index se 
+ *      data uthata hai, isliye data duplicate nahi hota aur speed bohot fast milti hai.
+ * 
+ * ============================================================================
+ */
